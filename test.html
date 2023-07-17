@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+          <div class="error-message" hidden="">
+            <span class="error-message-text" data-l10n-id="about-logins-error-message-default">Beim Versuch, dieses Passwort zu speichern, ist ein Fehler aufgetreten.</span>
+            <span class="error-message-link">
+              <a data-l10n-name="duplicate-link" tabindex="0" href=""></a>
+            </span>
+          </div>
+          <div class="header">
+            <img class="login-item-favicon" src="page-icon:https://accounts.firefox.com">
+            <h2 class="title">
+              <span class="login-item-title" title="accounts.firefox.com">accounts.firefox.com</span>
+              <span class="new-login-title" data-l10n-id="login-item-new-login-title">Neue Zugangsdaten hinzufügen</span>
+            </h2>
+            <button class="edit-button ghost-button" data-l10n-id="login-item-edit-button">Bearbeiten</button>
+            <button class="delete-button ghost-button" data-l10n-id="about-logins-login-item-remove-button">Entfernen</button>
+          </div>
+          <div class="breach-alert" hidden="">
+            <h3 class="alert-title" data-l10n-id="about-logins-breach-alert-title">Datenleck einer Website</h3>
+            <img class="alert-icon" src="chrome://browser/content/aboutlogins/icons/breached-website.svg">
+            <span class="alert-date" data-l10n-id="about-logins-breach-alert-date" data-l10n-args="{&quot;date&quot;: 0}">Das Datenleck wurde am 1. Januar 1970 registriert.</span>
+            <span class="alert-text" data-l10n-id="breach-alert-text">Passwörter dieser Website wurden veröffentlicht oder gestohlen, seit Sie Ihre Zugangsdaten zuletzt aktualisiert haben. Ändern Sie Ihr Passwort, um Ihr Konto zu schützen.</span>
+            <a class="alert-link" data-l10n-id="about-logins-breach-alert-link" data-l10n-args="{&quot;hostname&quot;: &quot;&quot;}" href="#" rel="noreferrer" target="_blank"> aufrufen</a>
+          </div>
+          <div class="vulnerable-alert" hidden="">
+            <h3 class="alert-title" data-l10n-id="about-logins-vulnerable-alert-title">Gefährdetes Passwort</h3>
+            <img class="alert-icon" src="chrome://browser/content/aboutlogins/icons/vulnerable-password.svg">
+            <span class="alert-text" data-l10n-id="about-logins-vulnerable-alert-text2">Dieses Passwort wurde auch für Zugangsdaten für eine andere Website verwendet und es ist wahrscheinlich von einem Datenleck dieser Website betroffen. Das Verwenden des gleichen Passworts gefährdet alle Benutzerkonten auf Websites mit dem gleichen Passwort.</span>
+            <a class="alert-link" data-l10n-id="about-logins-vulnerable-alert-link" data-l10n-args="{&quot;hostname&quot;: &quot;&quot;}" href="#" rel="noreferrer" target="_blank"> aufrufen</a>
+            <a class="alert-learn-more-link" data-l10n-id="about-logins-vulnerable-alert-learn-more-link" href="#" rel="noreferrer" target="_blank">Weitere Informationen</a>
+          </div>
+          <form>
+            <div class="detail-row">
+              <label class="detail-cell">
+                <span class="origin-label field-label" data-l10n-id="login-item-origin-label">Adresse der Website</span>
+                <!-- Default text inputs to readonly to reduce jumping of the field
+                    size on page load since it always starts readonly. -->
+
+                <a class="origin-input" dir="auto" target="_blank" rel="noreferrer" name="origin" href="https://accounts.firefox.com">https://accounts.firefox.com</a>
+                
+                <div class="tooltip-container">
+                  <div class="arrow-box">
+                      <p class="tooltip-message" data-l10n-id="login-item-tooltip-message">Stellen Sie sicher, dass dies genau mit der Adresse der Website übereinstimmt, auf der Sie sich anmelden.</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-row">
+                <label class="detail-cell">
+                  <span class="username-label field-label" data-l10n-id="login-item-username-label">Benutzername</span>
+                  <input type="text" name="username" data-l10n-id="about-logins-login-item-username" dir="ltr" readonly="" value="info@osemine.de" placeholder="(kein Benutzername)" tabindex="-1">
+                </label>
+                <button class="copy-button copy-username-button" data-copy-login-property="username" data-telemetry-object="username" type="button">
+                  <span class="copied-button-text" data-l10n-id="login-item-copied-username-button-text">Kopiert</span>
+                  <span class="copy-button-text" data-l10n-id="login-item-copy-username-button-text">Kopieren</span>
+                </button>
+              </div>
+              <div class="detail-row">
+                <label class="detail-cell">
+                  <span class="password-label field-label" data-l10n-id="login-item-password-label">Passwort</span>
+                  <div class="reveal-password-wrapper">
+                    <input class="password-display" type="password" autocomplete="off" dir="ltr" readonly="" tabindex="-1">
+                    
+                    <input type="checkbox" class="reveal-password-checkbox" data-l10n-id="login-item-password-reveal-checkbox" aria-label="Passwort anzeigen">
+                  </div>
+                </label>
+                <button class="copy-button copy-password-button" data-copy-login-property="password" data-telemetry-object="password" type="button">
+                  <span class="copied-button-text" data-l10n-id="login-item-copied-password-button-text">Kopiert</span>
+                  <span class="copy-button-text" data-l10n-id="login-item-copy-password-button-text">Kopieren</span>
+                </button>
+              </div>
+            </div>
+            <moz-button-group class="form-actions-row"><button class="save-changes-button" type="submit" data-l10n-id="login-item-save-changes-button" slot="primary">Änderungen speichern</button>
+              
+              <button class="cancel-button" data-l10n-id="login-item-cancel-button" type="button">Abbrechen</button>
+            </moz-button-group>
+            <login-timeline></login-timeline>
+          </form>
+        </div>
+      </div>
+    <login-list class="initialized">
+        
+        <li class="login-list-item selected" role="option" id="lli-{...}" data-guid="{...}" aria-selected="true">
+            <img class="favicon" src="page-icon:...">
+            <div class="labels">
+              <span class="title" dir="auto">...</span>
+              <span class="username" dir="ltr">...</span>
+            </div>
+            <img class="alert-icon" title="" src="">
+          </li>
+          <li class="login-list-item selected" role="option" id="lli-{...}" data-guid="{...}" aria-selected="true">
+            <img class="favicon" src="page-icon:...">
+            <div class="labels">
+              <span class="title" dir="auto">...</span>
+              <span class="username" dir="ltr">...</span>
+            </div>
+            <img class="alert-icon" title="" src="">
+          </li>
+    </login-list>
+
+    <div class="container">
+        <div class="column">
+          <div class="error-message" hidden="">
+            <span class="error-message-text" data-l10n-id="about-logins-error-message-default">Beim Versuch, dieses Passwort zu speichern, ist ein Fehler aufgetreten.</span>
+            <span class="error-message-link">
+              <a data-l10n-name="duplicate-link" tabindex="0" href=""></a>
+            </span>
+          </div>
+          <div class="header">
+            <img class="login-item-favicon" src="page-icon:https://accounts.firefox.com">
+            <h2 class="title">
+              <span class="login-item-title" title="accounts.firefox.com">accounts.firefox.com</span>
+              <span class="new-login-title" data-l10n-id="login-item-new-login-title">Neue Zugangsdaten hinzufügen</span>
+            </h2>
+            <button class="edit-button ghost-button" data-l10n-id="login-item-edit-button">Bearbeiten</button>
+            <button class="delete-button ghost-button" data-l10n-id="about-logins-login-item-remove-button">Entfernen</button>
+          </div>
+          <div class="breach-alert" hidden="">
+            <h3 class="alert-title" data-l10n-id="about-logins-breach-alert-title">Datenleck einer Website</h3>
+            <img class="alert-icon" src="chrome://browser/content/aboutlogins/icons/breached-website.svg">
+            <span class="alert-date" data-l10n-id="about-logins-breach-alert-date" data-l10n-args="{&quot;date&quot;: 0}">Das Datenleck wurde am 1. Januar 1970 registriert.</span>
+            <span class="alert-text" data-l10n-id="breach-alert-text">Passwörter dieser Website wurden veröffentlicht oder gestohlen, seit Sie Ihre Zugangsdaten zuletzt aktualisiert haben. Ändern Sie Ihr Passwort, um Ihr Konto zu schützen.</span>
+            <a class="alert-link" data-l10n-id="about-logins-breach-alert-link" data-l10n-args="{&quot;hostname&quot;: &quot;&quot;}" href="#" rel="noreferrer" target="_blank"> aufrufen</a>
+          </div>
+          <div class="vulnerable-alert" hidden="">
+            <h3 class="alert-title" data-l10n-id="about-logins-vulnerable-alert-title">Gefährdetes Passwort</h3>
+            <img class="alert-icon" src="chrome://browser/content/aboutlogins/icons/vulnerable-password.svg">
+            <span class="alert-text" data-l10n-id="about-logins-vulnerable-alert-text2">Dieses Passwort wurde auch für Zugangsdaten für eine andere Website verwendet und es ist wahrscheinlich von einem Datenleck dieser Website betroffen. Das Verwenden des gleichen Passworts gefährdet alle Benutzerkonten auf Websites mit dem gleichen Passwort.</span>
+            <a class="alert-link" data-l10n-id="about-logins-vulnerable-alert-link" data-l10n-args="{&quot;hostname&quot;: &quot;&quot;}" href="#" rel="noreferrer" target="_blank"> aufrufen</a>
+            <a class="alert-learn-more-link" data-l10n-id="about-logins-vulnerable-alert-learn-more-link" href="#" rel="noreferrer" target="_blank">Weitere Informationen</a>
+          </div>
+          <form>
+            <div class="detail-row">
+              <label class="detail-cell">
+                <span class="origin-label field-label" data-l10n-id="login-item-origin-label">Adresse der Website</span>
+                <!-- Default text inputs to readonly to reduce jumping of the field
+                    size on page load since it always starts readonly. -->
+
+                <a class="origin-input" dir="auto" target="_blank" rel="noreferrer" name="origin" href="https://accounts.firefox.com">https://accounts.firefox.com</a>
+                
+                <div class="tooltip-container">
+                  <div class="arrow-box">
+                      <p class="tooltip-message" data-l10n-id="login-item-tooltip-message">Stellen Sie sicher, dass dies genau mit der Adresse der Website übereinstimmt, auf der Sie sich anmelden.</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-row">
+                <label class="detail-cell">
+                  <span class="username-label field-label" data-l10n-id="login-item-username-label">Benutzername</span>
+                  <input type="text" name="username" data-l10n-id="about-logins-login-item-username" dir="ltr" readonly="" value="info@osemine.de" placeholder="(kein Benutzername)" tabindex="-1">
+                </label>
+                <button class="copy-button copy-username-button" data-copy-login-property="username" data-telemetry-object="username" type="button">
+                  <span class="copied-button-text" data-l10n-id="login-item-copied-username-button-text">Kopiert</span>
+                  <span class="copy-button-text" data-l10n-id="login-item-copy-username-button-text">Kopieren</span>
+                </button>
+              </div>
+              <div class="detail-row">
+                <label class="detail-cell">
+                  <span class="password-label field-label" data-l10n-id="login-item-password-label">Passwort</span>
+                  <div class="reveal-password-wrapper">
+                    <input class="password-display" type="password" autocomplete="off" dir="ltr" readonly="" tabindex="-1">
+                    
+                    <input type="checkbox" class="reveal-password-checkbox" data-l10n-id="login-item-password-reveal-checkbox" aria-label="Passwort anzeigen">
+                  </div>
+                </label>
+                <button class="copy-button copy-password-button" data-copy-login-property="password" data-telemetry-object="password" type="button">
+                  <span class="copied-button-text" data-l10n-id="login-item-copied-password-button-text">Kopiert</span>
+                  <span class="copy-button-text" data-l10n-id="login-item-copy-password-button-text">Kopieren</span>
+                </button>
+              </div>
+            </div>
+            <moz-button-group class="form-actions-row"><button class="save-changes-button" type="submit" data-l10n-id="login-item-save-changes-button" slot="primary">Änderungen speichern</button>
+              
+              <button class="cancel-button" data-l10n-id="login-item-cancel-button" type="button">Abbrechen</button>
+            </moz-button-group>
+            <login-timeline></login-timeline>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

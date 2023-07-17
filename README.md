@@ -1,0 +1,1 @@
+A password manager with login and registration that uses passkeys, Windows Hello, macOS TouchID or email verification to store passwords in the cloud with ease

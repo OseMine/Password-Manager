@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+
+    .separator {
+      border-bottom: 1px solid #cccccc;
+      margin: 20px 0;
+    }
+
+    .email-code-group input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+    }
+  </style>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+
+    .separator {
+      border-bottom: 1px solid #cccccc;
+      margin: 20px 0;
+    }
+
+    .email-code-group input {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Login</h1>
+  
+      <form id="passkey-form" class="form-group">
+        <label for="passkey">Register a Passkey</label>
+        <button type="submit">Register</button>
+      </form>
+  
+      <div class="separator"></div>
+  
+      <form id="hello-fp-form" class="form-group">
+        <label for="hello-fp">Register a Windows Hello or MacOS Fingerprint</label>
+        <button id="hello-fp">Login</button>
+      </form>
+  
+      <div class="separator"></div>
+  
+      <form id="email-code-form" class="form-group email-code-group">
+        <label for="email-code">Register with email code</label>
+        <input type="email" id="email-code-input" placeholder="Enter email"></input>
+        <button id="send-code" type="button">Submit email for Verification</button>
+      </form>
+    </div>
+  
+    <script>
+        const passkeyForm = document.getElementById('passkey-form');
+      
+        passkeyForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          // Füge hier den Code für die Passkey-Registrierung hinzu
+        });
+      
+        const helloFpForm = document.getElementById('hello-fp-form');
+      
+        helloFpForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          // Füge hier den Code für die Windows Hello- oder MacOS Fingerprint-Registrierung hinzu
+        });
+      
+        const emailCodeForm = document.getElementById('email-code-form');
+        const sendCodeBtn = document.getElementById('send-code');
+      
+        sendCodeBtn.addEventListener('click', function() {
+          emailCodeForm.innerHTML = '<p>Email code sent successfully!</p>';
+        });
+      </script>
+      
+      
+  </body>
+  </html>
