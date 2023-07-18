@@ -1,26 +1,49 @@
-A password manager with login and registration that uses passkeys, Windows Hello, macOS TouchID or email verification to store passwords in the cloud with ease
+<p>
+<h1 align="center">
+  Password Manager - Effortless and Secure
+</h1>
+</p>
 
-My goal with this is to make Password saving effortless and easy, without the fear of getting All account hacket with the minimal savty of Microsoft Edge, Google Chrome, Firefox, Opera/Opera GX or Brave
+## Introduction
 
-To use it:
-    Windows:
-        Test the all round package: (coming soon)
-        Run server localy: Run the ´´´run-server.bat´´´
-        Run only the App: Run the ´´´run-app.bat´´´
-        To build it: (coming soon)
-    MacOs/Linux:
-        coming soon
-    All systems:
-        Run server localy: Run the ´´´node server.js´´´
-        Run only the App: Run ´´´npx electron . ´´´
-        To build it: (coming soon)
+This password manager is designed to provide a seamless and secure experience for storing and managing your passwords in the cloud. It offers various login and registration options, including passkeys, Windows Hello, macOS TouchID, or email verification. With the minimal safety requirements of popular browsers like Microsoft Edge, Google Chrome, Firefox, Opera/Opera GX, or Brave, you can trust that your accounts are well protected.
+
+    
 
 
+## Features
+</h2>
 
-Whwn the Project is ready for the first public deployment and goes in version 1.0, I will manage the servers and databases
+- **Login and registration with passkeys, Windows Hello, macOS TouchID, or email verification**
+- **Effortless password storage in the cloud**
+- **Easy-to-use interface**
 
+## Usage Instructions
 
-Things to do before the First closed deployment/alpha version:
-    - Get Passkeys working to register/login
-    - Database saves the Acounts with their passkeys
-    - Get a name For the Passwormanager
+<strong>All Systems:</strong>
+
+- **Run the Server Locally:**
+```shell
+   node server.js
+   ```
+- **Run Only the App:** 
+```shell
+   npx electron .
+   ```
+- **Build the Application:** (coming soon)
+
+## Server and Database Management
+
+Once the project is ready for its initial public deployment and reaches version 1.0, I will take care of managing the servers and databases.
+
+## To-Do List for the First Closed Deployment/Alpha Version
+
+Before the first closed deployment or alpha version, the following tasks need to be completed:
+
+- Implement passkeys for registration and login
+- Ensure the database can save accounts along with their passkeys
+- Choose a name for the password manager
+
+##Conclusion
+
+With this password manager, your password-saving experience will be effortless and worry-free. By incorporating strong security measures and offering convenient features, we aim to provide you with a reliable solution for managing your passwords securely.
