@@ -7,7 +7,7 @@
     "sqlite3": "^5.1.6"
   },
   "name": "pwm",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A passwordmanager",
   "main": "main.js",
   "scripts": {

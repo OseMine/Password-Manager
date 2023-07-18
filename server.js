@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const crypto = require('crypto');
 
 const app = express();
 
@@ -8,33 +9,35 @@ app.use(bodyParser.json());
 
 // Register Start
 app.post('/register/start', (req, res) => {
-  // Implementiere den Code zur Generierung der Challenge und der öffentlichen Schlüsseloptionen für die Registrierung
-  // Speichere die Challenge und sende die öffentlichen Schlüsseloptionen an den Client zurück
+  const { username } = req.body;
+
+  // Generiere eine Challenge
+  const challenge = crypto.randomBytes(16).toString('hex');
+
+  // Generiere den QR-Code mit der Challenge und anderen Informationen
+  const qrCodeData = `https://example.com/register?challenge=${challenge}`;
+
+  // Speichere den Passkey in der Datenbank oder einem anderen Speichermechanismus
+
+  res.json({ challenge, qrCodeData });
 });
 
 // Register Finish
 app.post('/register/finish', (req, res) => {
-  // Implementiere den Code zur Überprüfung der Registrierungsantwort des Clients
-  // Speichere den öffentlichen Schlüssel und verknüpfe ihn mit dem Benutzer
+  const { challenge, response } = req.body;
+
+  // Überprüfe die Registrierungsantwort des Clients
+
+  if (response === 'YOUR_CLIENT_RESPONSE') {
+    // Registrierung erfolgreich
+    res.json({ message: 'Registration successful' });
+  } else {
+    // Registrierung fehlgeschlagen
+    res.status(400).json({ message: 'Registration failed' });
+  }
 });
 
-// Login Start
-app.post('/login/start', (req, res) => {
-  // Implementiere den Code zur Generierung der Challenge und der Benutzercredential-ID für den Anmeldevorgang
-  // Sende die Challenge und die Benutzercredential-ID an den Client zurück
-});
-
-// Login Finish
-app.post('/login/finish', (req, res) => {
-  // Implementiere den Code zur Überprüfung der Anmeldeantwort des Clients
-  // Führe die Authentifizierung durch und sende eine Antwort an den Client zurück
-});
-
-// Stammverzeichnis
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-  });
-  
+// ...
 
 // Starte den Server
 const port = 3000;
